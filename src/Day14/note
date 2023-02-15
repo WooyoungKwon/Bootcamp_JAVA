@@ -2,8 +2,11 @@
 
 2. 서버 소켓은 try 블럭이 끝나면 사라진다.
 
-3. PrintWriter = 입, BufferedReader = 귀
+3. PrintWriter = 입, BufferedReader = 귀.
 
-4. 바인드 에러 = 열었던 포트를 다시 또 열었을 때  발생
+4. 바인드 에러 = 열었던 포트를 다시 또 열었을 때 발생.
 
-5. 
+5. autoFlush = 자동으로 보내고 비워짐.
+
+6. 자바는 다중 상속을 지원하지 않기 때문에.
+확장성 면에서는 runnable

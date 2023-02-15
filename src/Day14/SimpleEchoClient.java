@@ -18,16 +18,16 @@ public class SimpleEchoClient {
             PrintWriter pw = null;
             BufferedReader br = null;
             try{
-                clientSocket = new Socket(localAddress, 6000);
+                clientSocket = new Socket("165.246.115.165", 20000);
                 pw = new PrintWriter(clientSocket.getOutputStream(), true);
                 br = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-
                 System.out.println("서버에 연결됨");
                 Scanner sc = new Scanner(System.in);
                 while (true) {
                     System.out.print("전송 메세지 입력 : ");
                     String line = sc.nextLine();
-                    if ("exit".equalsIgnoreCase(line)) {
+                    if ("exit".equalsIgnoreCase(line))
+                    {
                         break;  // 종료 조건
                     }
                     pw.println(line);  // 서버로 전송
