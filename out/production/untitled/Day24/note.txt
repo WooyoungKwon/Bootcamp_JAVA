@@ -1,0 +1,36 @@
+connect()로 서버 연결
+accept()로 클라이언트 연결
+
+put(해당버퍼의기본형) : 현재 pos 위치에 값을 넣고. pos+1 합니다.
+put(int index, 해당버퍼의기본형) : index 위치에 값을 넣습니다.
+get() : 현재 pos 위치 값을 리턴하고, pos 값을 +1합니다.
+get(int index) : index 위치 값을 리턴함니다.
+hasRemaining() : 남은 값의 여부 확인 (if pos < lim : return True)
+clear()      포지션 0, Limit 0
+rewind()     포지션 0
+flip()       Limit에 현재 포지션 위치 기록, 포지션 0
+
+Client
+    1. 채널 열기
+    SocketChannel channel = SocketChannel.open();   # 사용 후에는 close() 해줘야 함.
+    channel.connect(new InetSocketAddress("localhost", 8080));
+
+    2. 데이터 읽기
+    ByteBuffer byteBuffer = ByteBuffer.allocate(64);    # 버퍼는 중간에서 값을 보관해주는 것. ex) 놀이기구의 대기줄.
+                                                    # 버퍼는 읽기모드(get 함수)와 쓰기(put 함수)모드가 있다.
+                                                    # allocate -> 버퍼는 현재 쓰기모드
+    int bytesRead = channel.read(buffer);   # read() 메소드는 데이터를 읽고 데이터의 양을 리턴해준다. -1이 리턴되면 서버와의 연결이 종료 되었다는 뜻.
+
+    3. 데이터 쓰기
+    while (bytesRead > 0) {
+                    byteBuffer.flip();  # flip() -> '뒤집다'라는 뜻. 쓰기모드에서 읽기모드로 바꾼다. (flip 파일 참조)
+                    while (byteBuffer.hasRemaining())   # byteButter 데이터가 남아있는 동안 실행한다.
+                        System.out.print((char)byteBuffer.get());
+
+                    System.out.println();
+                    bytesRead = sc.read(byteBuffer);
+                }
+
+
+
+

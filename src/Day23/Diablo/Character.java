@@ -1,4 +1,4 @@
-package Day23;
+package Day23.Diablo;
 
 public abstract class Character {
     protected int hp;

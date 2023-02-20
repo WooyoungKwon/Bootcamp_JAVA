@@ -8,6 +8,7 @@ import java.util.Date;
 
 public class Day22 {
     public static void main(String args[]) {
+        
         System.out.println("멀티캐스트 타임 서버");
         DatagramSocket serverSocket = null; //UDP
         try {
@@ -28,7 +29,6 @@ public class Day22 {
                     throw new RuntimeException(e);
                 }
             }
-
         } catch (IOException ex) {
             System.out.println("입출력 예외 발생!");
         }

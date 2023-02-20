@@ -18,7 +18,7 @@ public class SimpleEchoClient {
             PrintWriter pw = null;
             BufferedReader br = null;
             try{
-                clientSocket = new Socket("165.246.115.165", 20000);
+                clientSocket = new Socket("165.246.80.158", 20000);
                 pw = new PrintWriter(clientSocket.getOutputStream(), true);
                 br = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                 System.out.println("서버에 연결됨");

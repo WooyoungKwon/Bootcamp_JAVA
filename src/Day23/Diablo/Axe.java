@@ -1,4 +1,4 @@
-package Day23;
+package Day23.Diablo;
 
 public class Axe implements WeaponBehavior{
     @Override

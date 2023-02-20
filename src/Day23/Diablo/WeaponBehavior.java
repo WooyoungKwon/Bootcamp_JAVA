@@ -1,4 +1,4 @@
-package Day23;
+package Day23.Diablo;
 
 public interface WeaponBehavior {
     void useWeapon();

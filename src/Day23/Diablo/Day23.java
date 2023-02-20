@@ -1,4 +1,5 @@
-package Day23;
+package Day23.Diablo;
+
 
 public class Day23 {
     public static void main(String[] args) {
